@@ -28,6 +28,8 @@ COPY . .
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED=1
+ARG NEXT_PUBLIC_GEMINI_API_KEY
+RUN echo "NEXT_PUBLIC_GEMINI_API_KEY=$NEXT_PUBLIC_GEMINI_API_KEY" > .env
 
 RUN \
   if [ -f yarn.lock ]; then yarn run build; \
